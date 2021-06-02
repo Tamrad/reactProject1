@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 export default class Bigstupidmoments extends Component {
+    
     constructor(props) {
         super(props)
 

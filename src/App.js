@@ -1,6 +1,6 @@
 import React from 'react';
 import Bigcountermoments from './bigcountermoments.js';
-import Bigstupidmoments from './bigstupidmoments';
+import Bigstupidmoments from './bigstupidmoments.js';
 
 function App() {
   return (
