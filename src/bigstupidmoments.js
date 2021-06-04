@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { contextTheme } from './App';
 
 export default class Bigstupidmoments extends Component {
     
@@ -6,18 +7,21 @@ export default class Bigstupidmoments extends Component {
         super(props)
 
         this.state = {
-            num: props.initalCount
+            num: props.initialCount
         }
     }
 
     render() {
         return (
-            <div>
-                {console.log(this.state.num)}
-                <button onClick={() => this.changeNum(-1)}>-</button>
-                <span>{this.state.num}</span>
-                <button onClick={() => this.changeNum(1)}>+</button>
-            </div>
+            <contextTheme.Consumer>
+                { style => (
+                    <div>
+                    <button style = {style} onClick={() => this.changeNum(-1)}>-</button>
+                    <span>{this.state.num}</span>
+                    <button style = {style} onClick={() => this.changeNum(1)}>+</button>
+                   </div>
+                )}
+            </contextTheme.Consumer>
         );
     }
 

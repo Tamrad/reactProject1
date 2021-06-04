@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import {contextTheme} from './App';
 
 export default function Bigcountermoments({ initialCount }) {
     const [num, setNum] = useState(initialCount);
-
+    const style = useContext(contextTheme);
     return (
         <>
-            <button onClick={() => setNum(prevNum => prevNum - 1)}>-</button>
+            <button style = {style} onClick={() => setNum(prevNum => prevNum - 1)}>-</button>
             <span>{num}</span>
-            <button onClick={() => setNum(prevNum => prevNum + 1)}>+</button>
+            <button style = {style} onClick={() => setNum(prevNum => prevNum + 1)}>+</button>
         </>
     );
 }
